@@ -13,7 +13,7 @@ Activate the virtual environment by ```source  ~/envs/e_inf/bin/activate```
 
 Change current directory to your clone of this repostiroy.
 
-Install the necessary dependencies with ```pip install -r requirements.txt```
+Install the necessary dependencies with ```pip install -r requirements.txt``` or ```make install```
 
 Run the app in Cloud Shell with ```python main.py```
 
