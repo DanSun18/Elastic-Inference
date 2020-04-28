@@ -1,9 +1,7 @@
 # Elastic-Inference
 Term Project for ECE 590: Data Analytics at Scale in the Cloud. 
 
-Project Link: https://noahgift.github.io/cloud-data-analysis-at-scale/projects.html#team-project
 
-Boilerplate code from https://github.com/GoogleCloudPlatform/python-docs-samples/tree/master/appengine/standard_python37/hello_world
 
 ## Deploying the project
 
@@ -18,3 +16,12 @@ Run the app in Cloud Shell with ```python main.py```
 ## Previewing the app
 
 While the app is running on Cloud Shell, you can access it by clicking the Web Preview button. 
+
+
+## Helpful Links
+
+Project Link: https://noahgift.github.io/cloud-data-analysis-at-scale/projects.html#team-project
+
+Boilerplate code from https://github.com/GoogleCloudPlatform/python-docs-samples/tree/master/appengine/standard_python37/hello_world
+
+How to send and receive images with Flask: https://gist.github.com/kylehounslow/767fb72fde2ebdd010a0bf4242371594
