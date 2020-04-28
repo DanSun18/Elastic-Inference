@@ -1,21 +1,32 @@
 # Elastic-Inference
 Term Project for ECE 590: Data Analytics at Scale in the Cloud. 
 
-
-
 ## Deploying the project
+
+Create a new project. 
+
+Clone the repository into your Cloud environment.
 
 Create a virtual environment in Google Cloud Shell with  ```virtualenv --python python3 ~/envs/e_inf ```
 
 Activate the virtual environment by ```source  ~/envs/e_inf/bin/activate```
 
+Change current directory to your clone of this repostiroy.
+
 Install the necessary dependencies with ```pip install -r requirements.txt```
 
 Run the app in Cloud Shell with ```python main.py```
 
-## Previewing the app
+### Previewing the app
 
 While the app is running on Cloud Shell, you can access it by clicking the Web Preview button. 
+
+### Deploying to App Engine
+Create an application with ```gcloud app create```.
+
+Deploy the app with ```gcloud app deploy app.yaml  --project [your_project_name]```
+
+Note: you may wish to disable the application when you are done with it. 
 
 
 ## Helpful Links
