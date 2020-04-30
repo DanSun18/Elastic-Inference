@@ -22,7 +22,7 @@ Run the app in Cloud Shell with ```python main.py```
 While the app is running on Cloud Shell, you can access it by clicking the Web Preview button. 
 
 ### Deploying to App Engine
-Create an application with ```gcloud app create```.
+Create an application with ```gcloud app create```. (You may not need to do this step if you have created an app on Google App Engine before.)
 
 Deploy the app with ```gcloud app deploy app.yaml  --project [your_project_name]```
 
