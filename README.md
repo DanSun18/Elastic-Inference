@@ -36,3 +36,6 @@ Project Link: https://noahgift.github.io/cloud-data-analysis-at-scale/projects.h
 Boilerplate code from https://github.com/GoogleCloudPlatform/python-docs-samples/tree/master/appengine/standard_python37/hello_world
 
 How to send and receive images with Flask: https://gist.github.com/kylehounslow/767fb72fde2ebdd010a0bf4242371594
+
+MNIST dataset as jpg: https://www.kaggle.com/scolianni/mnistasjpg/data
+
