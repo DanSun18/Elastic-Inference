@@ -20,13 +20,8 @@ def hello():
     return 'Hello World!'
 
 
-@app.route('/mnist')
+@app.route('/mnist', methods=['POST'])
 def mnist_prediction():
-    return None
-
-
-@app.route('/api/test', methods=['POST'])
-def test():
     r = request
     # print(r)
     # print(r.data)
@@ -56,7 +51,7 @@ def test():
     small_batch = tf.expand_dims(img_grey, 0)
     pred_prob = mnist_model.predict(small_batch)[0]
     pred_label = pred_prob.argmax(axis=-1)
-    # print(pred_label)
+    print(pred_label)
 
     # build a response dict to send back to client
     response = {'message': 'Image received. Size={}x{}. label={}'.format(img.shape[1],

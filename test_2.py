@@ -4,7 +4,7 @@ import json
 # import cv2
 
 addr = 'http://localhost:8080'
-test_url = addr + '/api/test'
+test_url = addr + '/mnist'
 img_file = 'test_data/img_1.jpg'
 
 # prepare headers for http request
@@ -22,6 +22,10 @@ response = requests.post(test_url, data=img_encoded.tostring(),
                          headers=headers)
 '''
 # decode response
+print(response)
 print(json.loads(response.text))
 
 # expected output: {u'message': u'image received. size=124x124'}
+
+response = requests.get('http://localhost:8080/')
+print(response.text)
