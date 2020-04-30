@@ -28,10 +28,17 @@ def mnist_prediction():
 @app.route('/api/test', methods=['POST'])
 def test():
     r = request
+    # print(r)
+    # print(r.data)
+    img = None
     # convert string of image data to uint8
+    # this should succeed when the request is made from Python clinet
     nparr = np.frombuffer(r.data, np.uint8)  # an array of size 572
+    # print(nparr)
     # decode image
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+
+
     # do some fancy processing here....
     '''
     # write image to file, for double check
@@ -52,7 +59,7 @@ def test():
     # print(pred_label)
 
     # build a response dict to send back to client
-    response = {'message': 'Image received. Size={}x{}. Label={}'.format(img.shape[1],
+    response = {'message': 'Image received. Size={}x{}. label={}'.format(img.shape[1],
                                                                img.shape[0],
                                                                pred_label)
                 }
