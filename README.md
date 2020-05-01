@@ -36,9 +36,9 @@ Note: you may wish to disable the application when you are done with it.
 
 ## Running Load Test
 
-Go to ```test/```, run ```pip install -r requirements-test.txt```. 
+Go to ```test/```, run ```pip install -r requirements-test.txt```. (If you are on MS Windows run ```pip install locustio``` instead)
 
-Go to ```../load_test```. Start the locust server by running ```./start_locust.sh```
+Go to ```../load_test```. Start the locust server by running ```./start_locust.sh``` (verified on Linux only)
 
 ### Running on multiple processes
 Link: https://docs.locust.io/en/stable/quickstart.html
