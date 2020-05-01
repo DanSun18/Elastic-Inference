@@ -49,7 +49,7 @@ def mnist_prediction():
     # rgb_tensor = tf.convert_to_tensor(img_rgb)
     # Use `convert_image_dtype` to convert to floats in the [0,1] range.
     normalized_tensor = tf.image.convert_image_dtype(img, tf.float32)
-    print(normalized_tensor)
+    # print(normalized_tensor)
     # img_grey = tf.image.rgb_to_grayscale(normalized_tensor)
     # print(img_grey)
     
@@ -74,4 +74,4 @@ if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
     # Engine, a webserver process such as Gunicorn will serve the app. This
     # can be configured by adding an `entrypoint` to app.yaml.
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)

@@ -11,8 +11,8 @@ ENV VIRTUAL_ENV /env
 ENV PATH /env/bin:$PATH
 
 # Install necessary libraries
-RUN apt-get update
-RUN apt-get install -y libsm6 libxext6 libxrender-dev
+# RUN apt-get update
+# RUN apt-get install -y libsm6 libxext6 libxrender-dev
 
 # Copy the application's requirements.txt and run pip to install all
 # dependencies into the virtualenv.

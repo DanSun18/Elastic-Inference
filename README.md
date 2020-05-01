@@ -30,10 +30,12 @@ Get project id by running ```gcloud config get-value project```
 
 Run ```gcloud builds submit --tag gcr.io/[project-id]/mnist-pred-image``` or whatever image name you want to give it. You can verify it is added with ```gcloud container images list```
 
-Deploy the app with ```gcloud app deploy --image-url=gcr.io/[project-id]/mnist-pred-image``` (These steps are taken because simply running ```gcloud app deploy``` resulting in Cloud Build to fail because of memory issues).
+Deploy the app with ```gcloud app deploy --image-url=gcr.io/[project-id]/mnist-pred-image``` (These steps are taken because simply running ```gcloud app deploy``` resulting in Cloud Build to fail because of memory issues ```OSError: [Errno 12] Cannot allocate memory```).
 
 Note: you may wish to disable the application when you are done with it. 
 
+## Running Load Test
+go to ```test/```, run ```pip install -r requirements-test.txt```. 
 
 ## Helpful Links
 

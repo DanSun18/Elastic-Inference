@@ -2,8 +2,6 @@ Flask==1.1.2
 pylint
 jsonpickle
 numpy
-opencv-python
 requests
 keras
 tensorflow
-locust
