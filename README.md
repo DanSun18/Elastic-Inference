@@ -1,5 +1,5 @@
 # Elastic-Inference
-Term Project for ECE 590: Data Analytics at Scale in the Cloud. 
+Term Project for ECE 590: Data Analytics at Scale in the Cloud. The project deploys a pre-trained CNN model for MNIST, aceepts picuters from the MNIST dataset, and returns a label prediction. It is configured to run on Google App Engine. 
 
 ## Deploying the project
 
