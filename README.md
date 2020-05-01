@@ -35,7 +35,21 @@ Deploy the app with ```gcloud app deploy --image-url=gcr.io/[project-id]/mnist-p
 Note: you may wish to disable the application when you are done with it. 
 
 ## Running Load Test
-go to ```test/```, run ```pip install -r requirements-test.txt```. 
+
+Go to ```test/```, run ```pip install -r requirements-test.txt```. 
+
+Go to ```../load_test```. Start the locust server by running ```./start_locust.sh```
+
+### Running on multiple processes
+Link: https://docs.locust.io/en/stable/quickstart.html
+
+Running too many requests can saturate a CPU. Therefore you can run on multiple processes:
+
+Start the master by typing ```locust  --master```.
+
+Start as many slaves as you want by typing ```locust --slave```
+
+Head to http://127.0.0.1:8089 to the Web UI.
 
 ## Helpful Links
 

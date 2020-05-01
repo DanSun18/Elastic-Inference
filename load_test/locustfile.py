@@ -3,15 +3,15 @@ import json
 
 def index(l):
     response = l.client.get("/")
-    print(response.text)
-    print('-------------------')
+    # print(response.text)
+    # print('-------------------')
     # print(response.text)
 
 def mnist(l):
-    img_file = '../test_data/img_1.jpg'
+    img_file = '../test/test_data/img_1.jpg'
     img = open(img_file, 'rb').read()
     response = l.client.post("/mnist", data=img)
-    print(response.text)
+    # print(response.text)
     # print(json.loads(response.text))
 
 class UserBehavior(TaskSet):
@@ -20,4 +20,4 @@ class UserBehavior(TaskSet):
 
 class WebsiteUser(HttpLocust):
     task_set = UserBehavior
-    wait_time = constant(30)
+    wait_time = constant(0.5)
