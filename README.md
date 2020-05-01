@@ -11,7 +11,7 @@ Create a virtual environment in Google Cloud Shell with  ```virtualenv --python 
 
 Activate the virtual environment by ```source  ~/envs/e_inf/bin/activate```
 
-Change current directory to your clone of this repostiroy.
+Change current directory to your clone of this repostiroy. Head into the `app` folder
 
 Install the necessary dependencies with ```pip install -r requirements.txt``` or ```make install```
 
@@ -24,7 +24,13 @@ While the app is running on Cloud Shell, you can access it by clicking the Web P
 ### Deploying to App Engine
 Create an application with ```gcloud app create```. (You may not need to do this step if you have created an app on Google App Engine before.)
 
-Deploy the app with ```gcloud app deploy app.yaml  --project [your_project_name]```
+#### Build a docker image by running the following command
+
+Get project id by running ```gcloud config get-value project```
+
+Run ```gcloud builds submit --tag gcr.io/[project-id]/mnist-pred-image``` or whatever image name you want to give it. You can verify it is added with ```gcloud container images list```
+
+Deploy the app with ```gcloud app deploy --image-url=gcr.io/[project-id]/mnist-pred-image``` (These steps are taken because simply running ```gcloud app deploy``` resulting in Cloud Build to fail because of memory issues).
 
 Note: you may wish to disable the application when you are done with it. 
 
@@ -38,4 +44,3 @@ Boilerplate code from https://github.com/GoogleCloudPlatform/python-docs-samples
 How to send and receive images with Flask: https://gist.github.com/kylehounslow/767fb72fde2ebdd010a0bf4242371594
 
 MNIST dataset as jpg: https://www.kaggle.com/scolianni/mnistasjpg/data
-

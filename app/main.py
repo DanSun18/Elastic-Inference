@@ -1,7 +1,7 @@
 from flask import Flask, request, Response
 import jsonpickle
 import numpy as np
-import cv2
+# import cv2
 import tensorflow as tf
 from tensorflow import keras
 
@@ -31,7 +31,10 @@ def mnist_prediction():
     nparr = np.frombuffer(r.data, np.uint8)  # an array of size 572
     # print(nparr)
     # decode image
-    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    # img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    img = tf.io.decode_image(r.data)
+    # print(img)
+    # print(img_tf)
 
 
     # do some fancy processing here....
@@ -42,13 +45,15 @@ def mnist_prediction():
     '''
     # convert to tf tensor.
     # Source: https://stackoverflow.com/questions/40273109/convert-python-opencv-mat-image-to-tensorflow-image-data
-    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    rgb_tensor = tf.convert_to_tensor(img_rgb)
+    # img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    # rgb_tensor = tf.convert_to_tensor(img_rgb)
     # Use `convert_image_dtype` to convert to floats in the [0,1] range.
-    normalized_rgb_tensor = tf.image.convert_image_dtype(rgb_tensor, tf.float32)
-    img_grey = tf.image.rgb_to_grayscale(normalized_rgb_tensor)
+    normalized_tensor = tf.image.convert_image_dtype(img, tf.float32)
+    print(normalized_tensor)
+    # img_grey = tf.image.rgb_to_grayscale(normalized_tensor)
     # print(img_grey)
-    small_batch = tf.expand_dims(img_grey, 0)
+    
+    small_batch = tf.expand_dims(normalized_tensor, 0)
     pred_prob = mnist_model.predict(small_batch)[0]
     pred_label = pred_prob.argmax(axis=-1)
     print(pred_label)

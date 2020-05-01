@@ -12,7 +12,7 @@ content_type = 'image/jpeg'
 headers = {'content-type': content_type}
 
 img = open(img_file, 'rb').read()
-response = requests.post(test_url, data=img, headers=headers)
+
 '''
 img = cv2.imread(img_file)
 # encode image as jpeg
@@ -22,6 +22,7 @@ response = requests.post(test_url, data=img_encoded.tostring(),
                          headers=headers)
 '''
 # decode response
+response = requests.post(test_url, data=img, headers=headers)
 print(response)
 print(json.loads(response.text))
 
