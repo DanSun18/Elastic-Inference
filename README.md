@@ -49,7 +49,7 @@ Start the master by typing ```locust  --master```.
 
 Start as many slaves as you want by typing ```locust --slave```
 
-Head to http://127.0.0.1:8089 to the Web UI.
+Head to http://127.0.0.1:8089 to the Web UI. (On MS Windows you'd have to set firewall to open that port)
 
 ## Helpful Links
 
