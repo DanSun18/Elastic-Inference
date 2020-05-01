@@ -1,0 +1,7 @@
+Flask==1.1.2
+pylint
+jsonpickle
+numpy
+requests
+keras
+tensorflow
